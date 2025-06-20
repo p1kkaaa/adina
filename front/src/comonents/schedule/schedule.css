@@ -1,0 +1,129 @@
+
+.schedule{
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background: #004080;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 900px; 
+  margin: auto;
+  margin-top: 15px;
+  color: white;
+}
+
+.sche__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    margin: 30px;
+    margin-bottom: 30px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 20px; /* Уменьшаем размер шрифта заголовка */
+  margin-bottom: 15px;
+}
+
+.calendar-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Уменьшаем отступы между элементами */
+  margin-bottom: 15px;
+  padding: 12px;
+  background-color: #004080;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header input,
+.calendar-header textarea,
+.calendar-header select,
+.calendar-header button {
+  padding: 8px;
+  font-size: 14px; /* Уменьшаем размер шрифта в полях */
+  margin: 4px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.calendar-header button {
+  background-color: #004080;
+  color: #fff;
+  cursor: pointer;
+}
+
+.calendar-header button:hover {
+  background-color: white;
+  color: #004080;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 15px;
+  justify-items: center;
+}
+
+.day-container {
+  background-color: #004080;
+  border-radius: 8px;
+  padding: 8px;
+  width: 100%;
+  max-width: 150px; /* Уменьшаем ширину контейнера для каждого дня */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.day-header {
+  background-color: #004080;
+  padding: 8px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 16px; /* Уменьшаем размер шрифта для дней недели */
+  color: white
+}
+
+.time-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.time-block {
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  padding: 8px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+.time {
+  font-weight: bold;
+  font-size: 14px; /* Уменьшаем размер шрифта времени */
+  color: #004080;
+}
+
+.subject {
+  font-size: 12px;
+  color: #004080;
+
+}
+
+.description {
+  font-size: 10px;
+  color: #004080;
+}
+
+.add-event-button {
+  text-align: center;
+  margin-top: 15px;
+}
+
+
