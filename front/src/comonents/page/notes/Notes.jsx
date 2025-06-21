@@ -59,6 +59,7 @@ const NoteBoard = () => {
   };
 
   return (
+    <div className="back-note">
     <div className="note">
       <div className="note-container">
         <h2>Заметки</h2>
@@ -105,7 +106,8 @@ const NoteBoard = () => {
           ))}
         </div>
       </div>
-    </div>
+      </div>
+      </div>
   );
 };
 

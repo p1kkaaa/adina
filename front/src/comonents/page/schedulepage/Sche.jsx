@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import './schedule.css'; // Подключаем стили
+import './sche.css'; // Подключаем стили
 
-const WeeklySchedule = () => {
+const Sche = () => {
   const initialSchedule = {
     Понедельник: [],
     Вторник: [],
@@ -46,7 +46,8 @@ const WeeklySchedule = () => {
   };
 
   return (
-    <div className="schedule">
+    <div className="back-sche">
+    <div className="sche">
       <div className="container">
 
       <div className="calendar-header">
@@ -104,8 +105,9 @@ const WeeklySchedule = () => {
         ))}
       </div>
       </div>
+      </div>
     </div>
   );
 };
 
-export default WeeklySchedule;
+export default Sche;
