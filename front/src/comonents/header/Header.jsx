@@ -17,6 +17,7 @@ function Header() {
         <div className="header__nav">
           <ul><button onClick={() => navigate('/')}>Главная</button></ul>
           <ul><button onClick={() => navigate('/sche')}>Расписания</button></ul>
+          <ul><button onClick={() => navigate('/reminders')}>Напоминания</button></ul>
           <ul><button onClick={() => navigate('/notes')}>Заметки</button></ul>
           <ul><button>О нас</button></ul>
         </div>

@@ -10,6 +10,7 @@ import NoteBoard from './comonents/page/notes/Notes';
 import Sche from './comonents/page/schedulepage/Sche';
 import WeeklySchedule from './comonents/schedule/Schedule';
 import { AuthProvider } from './context/AuthContext';
+import Reminders from './comonents/page/reminders/Reminders';
 
 
 
@@ -35,6 +36,7 @@ function Page() {
           <Route path="/loginregistr" element={<LoginRegistr /> } />
           <Route path="/notes" element={<NoteBoard />} />
           <Route path='/sche' element={<Sche />} />
+          <Route path='/reminders' element={<Reminders />} />
       </Routes>
 </AuthProvider>
   )

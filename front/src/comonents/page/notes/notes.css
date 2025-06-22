@@ -84,6 +84,7 @@ textarea:focus {
   outline: none;
   cursor: text;
   word-break: break-word;
+  margin-top: 45px;
 }
 
 /* Контейнер для кнопок (удаление и подтверждение) */
