@@ -8,23 +8,28 @@ function Header() {
   const { user, logout } = useAuth();
 
   return (
-    <div className="header">
+    <header className="header">
       <div className="container header__row">
         <Link to="/" className="header__logo">
           <img src={logo} alt="Logo" />
         </Link>
 
-        <div className="header__nav">
-          <ul><button onClick={() => navigate('/')}>Главная</button></ul>
-          <ul><button onClick={() => navigate('/sche')}>Расписания</button></ul>
-          <ul><button onClick={() => navigate('/reminders')}>Напоминания</button></ul>
-          <ul><button onClick={() => navigate('/notes')}>Заметки</button></ul>
-          <ul><button>О нас</button></ul>
-        </div>
+        <nav className="header__nav">
+          <button onClick={() => navigate('/')}>Главная</button>
+          <button onClick={() => navigate('/sche')}>Расписания</button>
+          <button onClick={() => navigate('/reminders')}>Напоминания</button>
+          <button onClick={() => navigate('/notes')}>Заметки</button>
+          <button onClick={() => {/* navigate к странице «О нас» */}}>О нас</button>
+        </nav>
 
         <div className="header__auth">
           {user ? (
-            <button onClick={() => { logout(); navigate('/loginregistr'); }}>
+            <button
+              onClick={() => {
+                logout();
+                navigate('/loginregistr');
+              }}
+            >
               Выход
             </button>
           ) : (
@@ -34,7 +39,7 @@ function Header() {
           )}
         </div>
       </div>
-    </div>
+    </header>
   );
 }
 

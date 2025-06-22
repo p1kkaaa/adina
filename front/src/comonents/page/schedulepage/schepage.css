@@ -56,10 +56,12 @@ h2 {
   margin: 4px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
+  color: white;
+  
 }
 
 .calendar-header textarea {
-  color: black;
+  color: white;
 }
 
 .calendar-header button {

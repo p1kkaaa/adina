@@ -10,7 +10,7 @@ const Reminders = () => {
 
   const authHeaders = () => {
     const token = localStorage.getItem('access_token')
-    return { Authorization: `Bearer ${token}` }
+    return { Authorization: `JWT ${token}` }
   }
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const Reminders = () => {
 
   const loadReminders = async () => {
     try {
-      const { data } = await api.get('reminders/', { headers: authHeaders() })
+      const { data } = await api.get('/app/reminders/', { headers: authHeaders() })
       setReminders(data)
     } catch (e) {
       console.error('Ошибка загрузки напоминаний:', e.response || e)
@@ -32,14 +32,14 @@ const Reminders = () => {
       let res
       if (editingId == null) {
         res = await api.post(
-          'reminders/',
+          '/app/reminders/',
           { text },
           { headers: authHeaders() }
         )
         setReminders([...reminders, res.data])
       } else {
         res = await api.put(
-          `reminders/${editingId}/`,
+          `/app/reminders/${editingId}/`,
           { text },
           { headers: authHeaders() }
         )
@@ -61,7 +61,7 @@ const Reminders = () => {
 
   const deleteReminder = async (id) => {
     try {
-      await api.delete(`reminders/${id}/`, { headers: authHeaders() })
+      await api.delete(`/app/reminders/${id}/`, { headers: authHeaders() })
       setReminders(reminders.filter(r => r.id !== id))
     } catch (e) {
       console.error('Ошибка удаления напоминания:', e.response || e)

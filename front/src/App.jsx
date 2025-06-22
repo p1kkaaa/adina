@@ -7,10 +7,10 @@ import Header from "./comonents/header/Header";
 import Parallax from "./comonents/parallax/Parallax";
 import LoginRegistr from './comonents/page/login-registr/LoginRegitr';
 import NoteBoard from './comonents/page/notes/Notes';
-import Sche from './comonents/page/schedulepage/Sche';
 import WeeklySchedule from './comonents/schedule/Schedule';
 import { AuthProvider } from './context/AuthContext';
 import Reminders from './comonents/page/reminders/Reminders';
+import Schepage from './comonents/page/schedulepage/Schepage';
 
 
 
@@ -30,12 +30,12 @@ const App = () => {
 function Page() {
   return (
     <AuthProvider>
-      <Header />
+      {/* <Header /> */}
       <Routes>
         <Route path="/" element={<App />} />
           <Route path="/loginregistr" element={<LoginRegistr /> } />
           <Route path="/notes" element={<NoteBoard />} />
-          <Route path='/sche' element={<Sche />} />
+          <Route path='/sche' element={<Schepage />} />
           <Route path='/reminders' element={<Reminders />} />
       </Routes>
 </AuthProvider>

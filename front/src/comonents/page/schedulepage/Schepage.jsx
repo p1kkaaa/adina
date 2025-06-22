@@ -1,14 +1,14 @@
 /* src/components/Sche.jsx */
-import  { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import api from '../../../services/axiosConfig'
-import './sche.css'
+import './schepage.css'
 
 const daysOfWeek = [
   'Понедельник', 'Вторник', 'Среда',
   'Четверг', 'Пятница', 'Суббота', 'Воскресенье'
 ]
 
-const Sche = () => {
+const Schepage = () => {
   const [scheduleList, setScheduleList] = useState([])
   const [currentEvent, setCurrentEvent] = useState({
     day: '', time: '', subject: '', description: ''
@@ -17,7 +17,7 @@ const Sche = () => {
 
   const authHeaders = () => {
     const token = localStorage.getItem('access_token')
-    return { Authorization: `Bearer ${token}` }
+    return { Authorization: `JWT ${token}` }
   }
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const Sche = () => {
 
   const loadSchedules = async () => {
     try {
-      const { data } = await api.get('schedules/', { headers: authHeaders() })
+      const { data } = await api.get('app/schedules/', { headers: authHeaders() })
       setScheduleList(data)
     } catch (e) {
       console.error('Ошибка загрузки расписания:', e.response || e)
@@ -38,11 +38,13 @@ const Sche = () => {
     try {
       let res
       if (editingEventId == null) {
-        res = await api.post('schedules/', payload, { headers: authHeaders() })
+        // POST на http://.../api/schedules/
+        res = await api.post('app/schedules/', payload, { headers: authHeaders() })
         setScheduleList([...scheduleList, res.data])
       } else {
+        // PUT на http://.../api/schedules/{id}/
         res = await api.put(
-          `schedules/${editingEventId}/`,
+          `app/schedules/${editingEventId}/`,
           payload,
           { headers: authHeaders() }
         )
@@ -58,7 +60,8 @@ const Sche = () => {
 
   const deleteEvent = async (id) => {
     try {
-      await api.delete(`schedules/${id}/`, { headers: authHeaders() })
+      // DELETE на http://.../api/schedules/{id}/
+      await api.delete(`app/schedules/${id}/`, { headers: authHeaders() })
       setScheduleList(scheduleList.filter(ev => ev.id !== id))
     } catch (e) {
       console.error('Ошибка удаления события:', e.response || e)
@@ -138,4 +141,4 @@ const Sche = () => {
   )
 }
 
-export default Sche
+export default Schepage
