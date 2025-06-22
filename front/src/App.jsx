@@ -30,7 +30,7 @@ const App = () => {
 function Page() {
   return (
     <AuthProvider>
-      {/* <Header /> */}
+      <Header />
       <Routes>
         <Route path="/" element={<App />} />
           <Route path="/loginregistr" element={<LoginRegistr /> } />
